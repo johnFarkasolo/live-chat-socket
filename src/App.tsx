@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from "./components/Header/Header";
+import Dialog from "./components/Dialog/Dialogs";
 
 const App = () => {
   return (
     <div className="container">
-      <h1>init</h1>
+        <Header />
+        <Dialog />
     </div>
   );
 }
