@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WebFontLoader from 'webfontloader';
+import dayjs from "dayjs";
 
 import App from './App';
 
+import "dayjs/locale/ru";
 import "./scss/index.scss";
 
 WebFontLoader.load({
@@ -11,6 +13,8 @@ WebFontLoader.load({
         families: ["Open Sans:300,400,700"],
     },
 });
+
+dayjs.locale("ru");
 
 ReactDOM.render(
   <React.StrictMode>
