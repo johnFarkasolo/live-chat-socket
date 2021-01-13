@@ -7,13 +7,23 @@ import Icon from "../../Icon/Icon";
 import './Item.scss'
 
 type ItemProps = {
-    isReverse: any,
-    isRemovable: any,
-    messages: any,
-    avatar: string
+    isReverse: string,
+    isRemovable: string,
+    messages: {
+        text: string,
+        status: string,
+        id: number,
+        date: number,
+    }[],
+    avatar: string,
+    onRemove: any
 }
 
-const Item = ({ isReverse, isRemovable, messages, avatar }: ItemProps) => {
+const Item = ({ isReverse, isRemovable, messages, avatar, onRemove }: ItemProps) => {
+    const onRemoveHandle = (event:any) => {
+        const { id } = event.currentTarget.dataset;
+        onRemove(+id);
+    };
     return (
         <div
             className={classNames("item", {
@@ -38,6 +48,7 @@ const Item = ({ isReverse, isRemovable, messages, avatar }: ItemProps) => {
                             data-id={item.id}
                             size={18}
                             className="remove-message"
+                            onClick={onRemoveHandle}
                         />
                     </div>
                 ))}

@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import classNames from "classnames";
 import * as icons from "../../icons/icons";
 
